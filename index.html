@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>undefined Burgers | Home</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        undefined: {
+                            100: '#f0f9ff',
+                            200: '#e0f2fe',
+                            300: '#bae6fd',
+                            400: '#7dd3fc',
+                            500: '#38bdf8',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .floating-burger {
+            animation: float 3s ease-in-out infinite;
+        }
+        .menu-item:hover .menu-img {
+            transform: scale(1.05);
+        }
+        .menu-img {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="floating-burger">
+                    <i data-feather="coffee" class="text-undefined-500 w-8 h-8"></i>
+                </div>
+                <h1 class="text-2xl font-bold text-undefined-600">undefined<span class="text-gray-700">Burgers</span></h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="font-medium text-undefined-600 hover:text-undefined-500">Home</a>
+                <a href="#menu" class="font-medium text-gray-700 hover:text-undefined-500">Cardápio</a>
+                <a href="#about" class="font-medium text-gray-700 hover:text-undefined-500">Sobre Nós</a>
+                <a href="#location" class="font-medium text-gray-700 hover:text-undefined-500">Localização</a>
+                <a href="#contact" class="font-medium text-gray-700 hover:text-undefined-500">Contato</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="https://wa.me/244927290575" target="_blank"
+                   class="bg-undefined-500 hover:bg-undefined-600 text-white px-4 py-2 rounded-full font-medium transition flex items-center">
+                    <i data-feather="shopping-cart" class="mr-2 w-4 h-4"></i>
+                    Pedir Agora
+                </a>
+                <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#" class="font-medium text-undefined-600 hover:text-undefined-500 py-2">Home</a>
+                <a href="#menu" class="font-medium text-gray-700 hover:text-undefined-500 py-2">Cardápio</a>
+                <a href="#about" class="font-medium text-gray-700 hover:text-undefined-500 py-2">Sobre Nós</a>
+                <a href="#location" class="font-medium text-gray-700 hover:text-undefined-500 py-2">Localização</a>
+                <a href="#contact" class="font-medium text-gray-700 hover:text-undefined-500 py-2">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Slider -->
+    <section class="relative">
+        <div class="swiper hero-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide relative">
+                    <div class="bg-gradient-to-r from-undefined-500 to-undefined-700 h-96 md:h-[500px] flex items-center">
+                        <div class="container mx-auto px-4 text-white">
+                            <h2 class="text-4xl md:text-6xl font-bold mb-4">O Sabor <span class="underline">undefined</span> que Você Merece</h2>
+                            <p class="text-xl mb-6">Hambúrgueres artesanais feitos com ingredientes premium</p>
+                            <a href="https://wa.me/244927290575" target="_blank"
+                               class="bg-white text-undefined-600 hover:bg-gray-100 px-6 py-3 rounded-full font-bold transition">
+                                Ver Cardápio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide relative">
+                    <div class="bg-gradient-to-r from-gray-800 to-gray-600 h-96 md:h-[500px] flex items-center">
+                        <div class="container mx-auto px-4 text-white">
+                            <h2 class="text-4xl md:text-6xl font-bold mb-4">Promoção Especial</h2>
+                            <p class="text-xl mb-6">Combo Duplo por apenas R$ 39,90</p>
+                            <a href="https://wa.me/244927290575" target="_blank"
+                               class="bg-undefined-500 hover:bg-undefined-600 text-white px-6 py-3 rounded-full font-bold transition">
+                                Pedir Agora
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Menu Preview -->
+    <section id="menu" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Nosso Cardápio</h2>
+                <div class="w-20 h-1 bg-undefined-500 mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Descubra nossos hambúrgueres artesanais feitos com os melhores ingredientes</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Menu Item 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden menu-item">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="23.jpg">
+                        <div class="absolute top-4 right-4 bg-undefined-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            Mais Pedido
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">undefined Classic</h3>
+                            <span class="text-undefined-600 font-bold">R$ 29,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Pão brioche, carne 180g, queijo cheddar, bacon, alface, tomate e molho especial</p>
+                        <a href="https://www.instagram.com/albertosamuel883773?igsh=MTBqZzJvemRxNjh4bQ==" target="_blank"
+                           class="w-full bg-undefined-500 hover:bg-undefined-600 text-white py-2 rounded-lg font-medium transition flex items-center justify-center">
+                            <i data-feather="plus" class="mr-2 w-4 h-4"></i>
+                            Adicionar
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden menu-item">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="23" alt="undefined Bacon>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">undefined Bacon</h3>
+                            <span class="text-undefined-600 font-bold">R$ 34,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Pão australiano, carne 200g, queijo prato, bacon crocante, cebola caramelizada e molho barbecue</p>
+                        <a href="https://www.instagram.com/albertosamuel883773?igsh=MTBqZzJvemRxNjh4bQ==" target="_blank"
+                           class="w-full bg-undefined-500 hover:bg-undefined-600 text-white py-2 rounded-lg font-medium transition flex items-center justify-center">
+                            <i data-feather="plus" class="mr-2 w-4 h-4"></i>
+                            Adicionar
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Menu Item 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden menu-item">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="http://static.photos/food/640x360/3" alt="undefined Veggie" class="w-full h-full object-cover menu-img">
+                        <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            Vegano
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">undefined Veggie</h3>
+                            <span class="text-undefined-600 font-bold">R$ 27,90</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Pão integral, hambúrguer de grão-de-bico, queijo vegano, alface, tomate, pepino e molho de ervas</p>
+                        <a href="https://www.instagram.com/albertosamuel883773?igsh=MTBqZzJvemRxNjh4bQ==" target="_blank"
+                           class="w-full bg-undefined-500 hover:bg-undefined-600 text-white py-2 rounded-lg font-medium transition flex items-center justify-center">
+                            <i data-feather="plus" class="mr-2 w-4 h-4"></i>
+                            Adicionar
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="menu.html" class="inline-block border-2 border-undefined-500 text-undefined-500 hover:bg-undefined-500 hover:text-white px-6 py-3 rounded-full font-bold transition">
+                    Ver Cardápio Completo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="http://static.photos/restaurant/640x360/1" alt="undefined Burgers" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Nossa História</h2>
+                    <div class="w-20 h-1 bg-undefined-500 mb-6"></div>
+                    <p class="text-gray-600 mb-4">Fundada em 2015, a undefined Burgers nasceu da paixão por hambúrgueres artesanais e da busca pelo sabor perfeito. Começamos como um pequeno food truck e hoje somos referência em hamburguerias gourmet na região.</p>
+                    <p class="text-gray-600 mb-6">Nossa filosofia é simples: usar apenas ingredientes de alta qualidade, preparados com técnicas artesanais para entregar uma experiência gastronômica única.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <div class="bg-undefined-100 p-3 rounded-full mr-3">
+                                <i data-feather="award" class="text-undefined-600 w-6 h-6"></i>
+                            </div>
+                            <span class="font-medium">Melhor Hamburgueria 2023</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-undefined-100 p-3 rounded-full mr-3">
+                                <i data-feather="star" class="text-undefined-600 w-6 h-6"></i>
+                            </div>
+                            <span class="font-medium">4.9/5 no Google</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">O Que Dizem Nossos Clientes</h2>
+                <div class="w-20 h-1 bg-undefined-500 mx-auto"></div>
+            </div>
+            
+            <div class="swiper testimonials-slider">
+                <div class="swiper-wrapper">
+                    <!-- Testimonial 1 -->
+                    <div class="swiper-slide">
+                        <div class="bg-white p-8 rounded-xl shadow-md">
+                            <div class="flex items-center mb-4">
+                                <img src="http://static.photos/people/200x200/1" alt="Cliente" class="w-12 h-12 rounded-full object-cover mr-4">
+                                <div>
+                                    <h4 class="font-bold">Carlos Silva</h4>
+                                    <div class="flex text-yellow-400">
+                                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600">"O undefined Classic é simplesmente incrível! O sabor da carne combinado com o molho especial é uma experiência única. Já experimentei vários hambúrgueres, mas nenhum se compara."</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="swiper-slide">
+                        <div class="bg-white p-8 rounded-xl shadow-md">
+                            <div class="flex items-center mb-4">
+                                <img src="http://static.photos/people/200x200/2" alt="Cliente" class="w-12 h-12 rounded-full object-cover mr-4">
+                                <div>
+                                    <h4 class="font-bold">Ana Oliveira</h4>
+                                    <div class="flex text-yellow-400">
+                                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600">"Como vegetariana, fiquei impressionada com o undefined Veggie. O hambúrguer de grão-de-bico é muito saboroso e bem temperado. O ambiente também é muito acolhedor!"</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="swiper-slide">
+                        <div class="bg-white p-8 rounded-xl shadow-md">
+                            <div class="flex items-center mb-4">
+                                <img src="http://static.photos/people/200x200/3" alt="Cliente" class="w-12 h-12 rounded-full object-cover mr-4">
+                                <div>
+                                    <h4 class="font-bold">Roberto Santos</h4>
+                                    <div class="flex text-yellow-400">
+                                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                        <i data-feather="star" class="w-4 h-4 fill-current"></i
